@@ -16,8 +16,7 @@ std::unordered_map<std::string , std::vector<int>> Sender::readFromFile(const st
         }
     }
     catch (...){
-//        std::cout << "There was an error: " << e.what() << std::endl;
-        std::cout << "There was an error: " << std::endl;
+        std::cout << "There was an error with opening the file " << std::endl;
     }
     paramValueMap[parameter] = sensorStreamValue;
     return paramValueMap;
@@ -28,7 +27,6 @@ std::string Sender::writeToConsole() {
     std::string output = {};
     for(const auto& elem : paramValueMap)
     {
-//        std::cout << elem.first << "," ;
         output += elem.first + ",";
         for(const auto& value : elem.second){
             output += std::to_string(value) + " ";

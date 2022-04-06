@@ -20,7 +20,7 @@ TEST_CASE("test reading from a file for SOC"){
     std::string filePath = "/home/nsk8kor/CLionProjects/stream-line-SkandaNarayana/SoCValuesFromSensor.txt";
     Sender senderObj;
     assert(senderObj.readFromFile(filePath, "SOC") == expected);
-
+    senderObj.writeToConsole();
 }
 
 TEST_CASE("write to console"){
