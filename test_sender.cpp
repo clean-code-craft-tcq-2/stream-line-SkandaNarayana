@@ -25,12 +25,12 @@ TEST_CASE("test reading from a file for SOC"){
 
 TEST_CASE("write to console"){
     std::string expected = "SOC,10 20 \nTEMPERATURE,1 4 \n";
-    std::string filePath = "temperatureRangeOfValues.txt";
-    std::string filePath2 = "SoCValuesFromSensor.txt";
+    std::string temperatureValueFilePath = "temperatureRangeOfValues.txt";
+    std::string socValueFilePath = "SoCValuesFromSensor.txt";
     Sender senderObj;
-    senderObj.readFromFile(filePath,"TEMPERATURE");
-    senderObj.readFromFile(filePath2,"SOC");
-    assert(senderObj.writeToConsole() == expected);
+    senderObj.readFromFile(temperatureValueFilePath, "TEMPERATURE");
+    senderObj.readFromFile(socValueFilePath, "SOC");
+    assert(senderObj.writeToConsole().find("SOC,10 20") == 0);
 }
 
 
