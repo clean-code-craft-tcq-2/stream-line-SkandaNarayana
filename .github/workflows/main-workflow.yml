@@ -50,7 +50,7 @@ jobs:
           flake8 . --count --exit-zero --max-line-length=80 --ignore=E111,E121,E126 --statistics
       - name: Run and collect coverage
         run: |
-          coverage run --branch sender.test.py
+          coverage run --branch reciever.test.py
           coverage html
           coverage report
       - name: Upload coverage
