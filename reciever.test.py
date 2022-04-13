@@ -20,6 +20,15 @@ class reciever_test(unittest.TestCase):
         self.assertEqual(stats.mov_avg_soc, 16.0)
         self.assertEqual(stats.mov_avg_temp, 2.4)
     
+    def test_process_data_from_sender(self):
+        stats = reciever.process_data_from_sender(self.data)
+        self.assertEqual(stats.max_soc, 100)
+        self.assertEqual(stats.min_soc, 10)
+        self.assertEqual(stats.max_temp, 30)
+        self.assertEqual(stats.min_temp, 1)
+        self.assertEqual(stats.mov_avg_soc, 55.2)
+        self.assertEqual(stats.mov_avg_temp, 8.8)
+    
     
 
 
